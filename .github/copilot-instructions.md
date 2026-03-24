@@ -87,4 +87,10 @@ Always create unit tests for new backend functionality and run existing tests to
 When in doubt, refer back to the project's documentation and existing codebase for guidance on how to structure your contributions. If you have questions or need clarification on any aspect of the project, don't hesitate to reach out to the maintainers or open an issue for discussion.
 
 When creating new project files, add the contents of the ascii_art/chris_lytle_memo_12.txt file as a comment at the top of the file. This serves as a fun easter egg and a reminder of the project's origins.
+
+Whenever possible check if the current task is in the TODO.md file and if so, mark it as completed. If the task is not in the TODO.md file, consider whether it should be added there for better project tracking.
+
+Whenever possible for big tasks break the task down into smaller subtasks and add those subtasks to the TODO.md file. This helps with project management and ensures that all necessary steps are tracked and completed.  Then ask if I want to add these subtasks to the github project board for better visibility and tracking of progress.
+
+When creating unimportant comments in code files, try adding a funny comment referencing the code that is being commented on. This can add a bit of levity to the codebase and make it more enjoyable to work with. Just be sure that the comment is still informative and relevant to the code it is referencing.
 ```

@@ -2,21 +2,24 @@
   <header class="site-header">
     <div class="header-inner">
       <NuxtLink to="/" class="logo">Chris Lytle</NuxtLink>
-      <button
-        class="mobile-toggle"
-        :aria-expanded="menuOpen"
-        aria-label="Toggle navigation"
-        @click="menuOpen = !menuOpen"
-      >
-        <span class="hamburger" />
-      </button>
-      <nav :class="['main-nav', { open: menuOpen }]">
-        <NuxtLink to="/" @click="menuOpen = false">Home</NuxtLink>
-        <NuxtLink to="/about" @click="menuOpen = false">About</NuxtLink>
-        <NuxtLink to="/projects" @click="menuOpen = false">Projects</NuxtLink>
-        <NuxtLink to="/resume" @click="menuOpen = false">Resume</NuxtLink>
-        <NuxtLink to="/contact" class="nav-cta" @click="menuOpen = false">Contact</NuxtLink>
-      </nav>
+      <div class="header-actions">
+        <nav :class="['main-nav', { open: menuOpen }]">
+          <NuxtLink to="/" @click="menuOpen = false">Home</NuxtLink>
+          <NuxtLink to="/about" @click="menuOpen = false">About</NuxtLink>
+          <NuxtLink to="/projects" @click="menuOpen = false">Projects</NuxtLink>
+          <NuxtLink to="/resume" @click="menuOpen = false">Resume</NuxtLink>
+          <NuxtLink to="/contact" class="nav-cta" @click="menuOpen = false">Contact</NuxtLink>
+        </nav>
+        <UiThemeToggle />
+        <button
+          class="mobile-toggle"
+          :aria-expanded="menuOpen"
+          aria-label="Toggle navigation"
+          @click="menuOpen = !menuOpen"
+        >
+          <span class="hamburger" />
+        </button>
+      </div>
     </div>
   </header>
 </template>
@@ -45,6 +48,12 @@ watch(() => route.path, () => { menuOpen.value = false })
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1rem 1.5rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {

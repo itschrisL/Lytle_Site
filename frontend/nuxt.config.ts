@@ -2,6 +2,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  modules: ['@nuxtjs/color-mode'],
+
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: '-mode',
+  },
+
   app: {
     head: {
       charset: 'utf-8',
