@@ -1,3 +1,12 @@
+```
+██╗  ██╗   ██╗████████╗██╗     ███████╗
+██║  ╚██╗ ██╔╝╚══██╔══╝██║     ██╔════╝
+██║   ╚████╔╝    ██║   ██║     █████╗  
+██║    ╚██╔╝     ██║   ██║     ██╔══╝  
+███████╗██║      ██║   ███████╗███████╗
+╚══════╝╚═╝      ╚═╝   ╚══════╝╚══════╝
+```
+
 # Lytle_Site
 
 Professional personal website for **Chris Lytle** — Software Developer, Sales Engineer, and Startup Builder.
@@ -20,7 +29,25 @@ Lytle_Site/
 └── .gitignore
 ```
 
-## Getting Started
+## Quick Start
+
+The setup script detects your OS, checks prerequisites, installs all dependencies, and starts the dev servers.
+
+**macOS / Linux:**
+
+```bash
+./setup.sh
+```
+
+**Windows (PowerShell):**
+
+```powershell
+.\setup.ps1
+```
+
+Both scripts will prompt you to choose between **local development** (Node + Python) and **Docker Compose**.
+
+## Getting Started (Manual)
 
 ### Frontend
 

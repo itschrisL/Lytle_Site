@@ -86,5 +86,5 @@ Always create unit tests for new backend functionality and run existing tests to
 
 When in doubt, refer back to the project's documentation and existing codebase for guidance on how to structure your contributions. If you have questions or need clarification on any aspect of the project, don't hesitate to reach out to the maintainers or open an issue for discussion.
 
-When creating new project files, add the contents of the ascii_art/chris_lytle_memo_12.txt file as a comment at the top of the file. This serves as a fun easter egg and a reminder of the project's origins.
+When creating new project files, add the contents of the ascii_art/lytle_ansi_shadow.txt file as a comment at the top of the file. This serves as a fun easter egg and a reminder of the project's origins.
 ```
