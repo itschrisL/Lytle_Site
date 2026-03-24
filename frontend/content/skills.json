@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Languages",
+    "items": ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"]
+  },
+  {
+    "category": "Frameworks & Libraries",
+    "items": ["Vue", "Nuxt", "FastAPI", "React", "Node.js"]
+  },
+  {
+    "category": "Tools & Platforms",
+    "items": ["Git", "Docker", "AWS", "PostgreSQL", "Linux"]
+  },
+  {
+    "category": "Other",
+    "items": ["Sales Engineering", "Technical Demos", "Startup Operations", "API Design"]
+  }
+]

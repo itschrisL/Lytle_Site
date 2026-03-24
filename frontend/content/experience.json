@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Software Developer",
+    "company": "Company Name",
+    "period": "2023 — Present",
+    "description": "Building and shipping software products. Responsible for architecture decisions, feature development, and cross-functional collaboration."
+  },
+  {
+    "title": "Sales Engineer",
+    "company": "Company Name",
+    "period": "2021 — 2023",
+    "description": "Bridged the gap between technical products and business needs. Led technical demos, proof-of-concept builds, and customer-facing solutions."
+  },
+  {
+    "title": "Startup Experience",
+    "company": "Startup Name",
+    "period": "2019 — 2021",
+    "description": "Wore many hats in an early-stage startup environment — from product ideation and development to customer discovery and go-to-market."
+  }
+]

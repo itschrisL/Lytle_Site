@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "project-one",
+    "title": "Project One",
+    "description": "A brief description of the project, what problem it solved, and what made it interesting.",
+    "stack": ["Vue", "Python", "FastAPI", "PostgreSQL"],
+    "image": "",
+    "featured": true,
+    "liveUrl": "",
+    "repoUrl": "https://github.com/itschrisL",
+    "role": "Full-stack developer responsible for architecture, backend API design, and frontend implementation.",
+    "outcome": "Delivered a production-ready application that streamlined the core workflow and reduced manual effort."
+  },
+  {
+    "slug": "project-two",
+    "title": "Project Two",
+    "description": "A brief description of the second project — what it does and why it matters.",
+    "stack": ["React", "Node.js", "AWS"],
+    "image": "",
+    "featured": true,
+    "liveUrl": "",
+    "repoUrl": "https://github.com/itschrisL",
+    "role": "Lead developer and technical architect for the full product lifecycle.",
+    "outcome": "Shipped to production with positive user feedback and measurable business impact."
+  },
+  {
+    "slug": "project-three",
+    "title": "Project Three",
+    "description": "A brief description of the third project — context, approach, and results.",
+    "stack": ["TypeScript", "Vue", "Docker"],
+    "image": "",
+    "featured": true,
+    "liveUrl": "",
+    "repoUrl": "https://github.com/itschrisL",
+    "role": "Software engineer building the core product features and integration layer.",
+    "outcome": "Successfully launched and adopted by the target user base."
+  }
+]
