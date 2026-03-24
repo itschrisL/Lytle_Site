@@ -26,7 +26,7 @@
 <script setup lang="ts">
 const links = [
   { icon: 'github', url: 'https://github.com/itschrisL', label: 'GitHub' },
-  { icon: 'linkedin', url: 'https://linkedin.com/in/', label: 'LinkedIn' },
+  { icon: 'linkedin', url: 'https://www.linkedin.com/in/christopherslytle/', label: 'LinkedIn' },
   { icon: 'email', url: 'mailto:chris@example.com', label: 'Email' },
 ]
 </script>
