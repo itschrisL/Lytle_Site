@@ -1,0 +1,25 @@
+#                                                            
+#     ▄▄▄▄   ▄▄    ▄▄  ▄▄▄▄▄▄     ▄▄▄▄▄▄     ▄▄▄▄             
+#   ██▀▀▀▀█  ██    ██  ██▀▀▀▀██   ▀▀██▀▀   ▄█▀▀▀▀█            
+#  ██▀       ██    ██  ██    ██     ██     ██▄                
+#  ██        ████████  ███████      ██      ▀████▄            
+#  ██▄       ██    ██  ██  ▀██▄     ██          ▀██           
+#   ██▄▄▄▄█  ██    ██  ██    ██   ▄▄██▄▄   █▄▄▄▄▄█▀           
+#     ▀▀▀▀   ▀▀    ▀▀  ▀▀    ▀▀▀  ▀▀▀▀▀▀    ▀▀▀▀▀             
+#                                                            
+#
+# Dev-only image — just installs deps, source is mounted at runtime.
+# No build step: nuxt dev handles compilation on the fly.
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install deps first for layer caching — re-runs only when package.json changes
+COPY package.json package-lock.json* ./
+RUN npm install
+
+EXPOSE 3000
+
+# Command is overridden by docker-compose.dev.yml: npm run dev
+CMD ["npm", "run", "dev"]
