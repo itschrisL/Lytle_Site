@@ -10,6 +10,7 @@
           <NuxtLink to="/resume" @click="menuOpen = false">Resume</NuxtLink>
           <NuxtLink to="/contact" class="nav-cta" @click="menuOpen = false">Contact</NuxtLink>
         </nav>
+        <UiDyslexicToggle />
         <UiThemeToggle />
         <button
           class="mobile-toggle"

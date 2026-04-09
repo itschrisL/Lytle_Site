@@ -2,6 +2,34 @@
    Chris Lytle — Design System & Global Styles
    ============================================ */
 
+/* --- OpenDyslexic Font (loaded lazily — only fetched when toggled) --- */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Regular.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Bold.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Italic.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/antijingoist/opendyslexic@master/compiled/OpenDyslexic-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* --- CSS Variables / Design Tokens --- */
 :root {
   /* Colors */
@@ -98,4 +126,12 @@ button {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Dyslexic Font Mode — because reading should be for everyone --- */
+html.dyslexic-font body,
+html.dyslexic-font input,
+html.dyslexic-font textarea,
+html.dyslexic-font button {
+  font-family: 'OpenDyslexic', sans-serif !important;
 }

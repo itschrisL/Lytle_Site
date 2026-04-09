@@ -22,6 +22,7 @@
 - [ ] Review typography (Inter font) — confirm or swap
 - [ ] Test responsive layout on mobile, tablet, and desktop
 - [ ] Verify dark-on-light contrast meets WCAG AA
+- [x] Add OpenDyslexic font with toggleable button in header (accessibility)
 
 ## Phase 3 — Backend & Contact Flow
 
