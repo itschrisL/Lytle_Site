@@ -19,9 +19,13 @@
 </template>
 
 <script setup lang="ts">
-useHead({
+useSeoMeta({
   title: 'Resume — Chris Lytle',
-  meta: [{ name: 'description', content: 'Resume and professional experience of Chris Lytle.' }],
+  description: 'Resume and professional experience of Chris Lytle — software developer, sales engineer, and startup builder.',
+  ogTitle: 'Resume — Chris Lytle',
+  ogDescription: 'Resume and professional experience of Chris Lytle — software developer, sales engineer, and startup builder.',
+  ogImage: '/og-image.png',
+  twitterCard: 'summary_large_image',
 })
 </script>
 

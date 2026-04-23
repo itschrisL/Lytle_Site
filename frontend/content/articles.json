@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "building-this-portfolio-site",
+    "title": "Building My Portfolio Site with Nuxt 3 and FastAPI",
+    "date": "2026-04-23",
+    "summary": "A behind-the-scenes look at how I architected this site — Nuxt 3 for the frontend, FastAPI for the backend, and a few fun accessibility features thrown in for good measure.",
+    "tags": ["nuxt", "fastapi", "python", "vue", "accessibility"],
+    "content": [
+      "Building a personal portfolio sounds deceptively simple. Then you're three hours deep in CSS variable naming conventions and wondering whether --color-surface should be one token or two. I decided to write about the decisions I actually made, rather than the idealized version of the process.",
+      "The frontend is Nuxt 3 with Vue 3 and TypeScript. I wanted file-based routing, good SSR/static generation support, and a path to great SEO without fighting the framework. Nuxt delivered on all three. The design system is entirely custom CSS — no Tailwind, no component library. Just CSS variables (design tokens) that flip between light and dark themes via a class on the root element.",
+      "The backend is FastAPI on Python 3.14. It's intentionally minimal: a contact form endpoint and a health check. All content lives as static JSON in the frontend repo — no database, no CMS. This keeps the architecture dead simple and deploys beautifully as a static site with a tiny sidecar API.",
+      "Two accessibility features I'm particularly happy with: a theme toggle (dark/light) that persists via @nuxtjs/color-mode, and an OpenDyslexic font toggle that applies the font globally via a CSS class on the html element. Both are first-class citizens in the header, not hidden in a settings menu somewhere.",
+      "The whole project lives in a monorepo with Docker Compose for local development. Next up: real content, a blog (hi!), and production deployment. If you want to dig into the source code, it's on GitHub."
+    ]
+  },
+  {
+    "slug": "sales-engineering-to-software",
+    "title": "From Sales Engineering to Software Development",
+    "date": "2026-03-15",
+    "summary": "What spending years explaining complex software to non-technical audiences taught me about building software people actually want — and why the skills transfer more than you'd think.",
+    "tags": ["career", "sales-engineering", "software", "product"],
+    "content": [
+      "Most developers learn empathy for users the hard way — by shipping something nobody uses and then wondering why. Sales engineers learn it on day one. When your job is to make a room full of skeptical executives understand why your product solves their problem, you develop a visceral sense for what matters and what's noise.",
+      "The core skill is translation. Not just technical-to-business, but problem-to-solution and need-to-feature. I spent years doing live demos, building proof-of-concepts under deadline, and turning customer objections into product feedback. Every one of those skills has a direct software development analog.",
+      "Live demos teach you to think about the happy path and the unhappy path simultaneously. A demo that crashes on stage is the equivalent of a production bug during peak traffic. You learn to anticipate failure modes, build in fallbacks, and stay calm when things go sideways.",
+      "POC builds under deadline taught me to scope aggressively. The question isn't 'what would be cool to build?' — it's 'what's the minimum that will demonstrate the value?' That instinct is worth more than any architecture pattern.",
+      "The hardest part of the transition was letting go of the customer-facing feedback loop. In sales engineering, you know immediately if something landed. In software, you deploy and wait. I've learned to build that feedback in intentionally — analytics, user interviews, A/B tests — rather than assuming silence means success."
+    ]
+  },
+  {
+    "slug": "startup-lessons-shipping-software",
+    "title": "Five Things Startup Life Taught Me About Shipping Software",
+    "date": "2026-02-01",
+    "summary": "Early-stage startups are a masterclass in constraint. Here's what I actually learned about shipping software when you have no time, no resources, and no choice but to ship.",
+    "tags": ["startups", "product", "lessons", "engineering"],
+    "content": [
+      "I've worked in early-stage startup environments and the experience is genuinely different from larger companies in ways that don't show up in blog posts. It's not just 'move fast and break things.' It's more like 'understand exactly what you can afford to break and what you absolutely cannot, and have a plan for both.'",
+      "First: scope is a skill. The ability to cut a feature to its essential core — to ask 'what's the version of this that's worth shipping today?' — is one of the most valuable things I learned. Perfect is the enemy of done, but so is scope creep. The V1 of almost everything is embarrassingly small, and that's correct.",
+      "Second: talking to users is not optional. It's easy to build in a vacuum and assume you understand the problem. You don't. Startups that skip customer discovery build the wrong thing faster. Get out of the building (or the Zoom call) early and often.",
+      "Third: technical debt has interest rates. Some debt is worth taking — moving fast to validate a hypothesis is a legitimate trade-off. But debt taken on features that don't survive the next pivot is just waste. Learn to tell the difference before you borrow.",
+      "Fourth: boring technology is a feature. Early-stage startups have enough novel problems to solve on the product side. Using well-understood, well-documented tools for your infrastructure means your 2am outage is Google-able. Save the interesting technology choices for the places where they create genuine competitive advantage.",
+      "Fifth: momentum beats perfection. A codebase that ships every week and iterates is healthier than one that chases a perfect architecture that never lands. Tests matter, code quality matters, but they matter in service of shipping — not instead of it."
+    ]
+  }
+]

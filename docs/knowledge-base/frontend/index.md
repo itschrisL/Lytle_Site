@@ -10,7 +10,7 @@ tags:
 type: index
 status: active
 created: 2026-04-22
-updated: 2026-04-22
+updated: 2026-04-23
 related:
   - "[[../codebase/architecture]]"
   - "[[stores]]"
@@ -35,6 +35,8 @@ File-based routing via `frontend/pages/`. Nuxt auto-generates routes from the fi
 | `/projects/:slug` | `pages/projects/[slug].vue` | Dynamic route — slug matched against `projects.json` |
 | `/resume` | `pages/resume.vue` | ExperienceTimeline + SkillsGrid + download button |
 | `/contact` | `pages/contact.vue` | ContactForm component |
+| `/blog` | `pages/blog/index.vue` | Article listing — date, tags, summary cards |
+| `/blog/:slug` | `pages/blog/[slug].vue` | Dynamic route — slug matched against `articles.json`; 404 guard via `createError` |
 
 **404 handling:** `[slug].vue` calls `createError({ statusCode: 404 })` when slug is not found in the JSON data.
 

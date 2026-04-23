@@ -10,7 +10,7 @@ tags:
 type: reference
 status: active
 created: 2026-04-22
-updated: 2026-04-22
+updated: 2026-04-23
 related:
   - "[[index]]"
   - "[[stores]]"
@@ -34,7 +34,7 @@ All components are in `frontend/components/` and auto-imported by Nuxt using pat
 | Emits | None |
 | Renders | Sticky header with logo, nav links, `UiDyslexicToggle`, `UiThemeToggle`, mobile hamburger |
 | State | `menuOpen` (local `ref`) — closes on route change via `watch(() => route.path)` |
-| Notes | Nav links include `/`, `/about`, `/projects`, `/resume`, `/contact` |
+| Notes | Nav links include `/`, `/about`, `/projects`, `/blog`, `/resume`, `/contact` |
 
 ### `LayoutAppFooter`
 

@@ -28,7 +28,7 @@
 
 - [ ] Configure `.env` with real SMTP credentials (or SendGrid / Resend)
 - [ ] Test contact form end-to-end (submit → email received)
-- [ ] Add rate limiting to `POST /api/contact` to prevent spam
+- [x] Add rate limiting to `POST /api/contact` to prevent spam
 - [ ] Confirm CORS `allowed_origins` is set for production domain
 
 ## Phase 4 — Launch Readiness
@@ -40,12 +40,12 @@
 - [ ] Set up hosting (Vercel / Netlify for frontend, Render / Railway / Fly.io for backend)
 - [ ] Configure custom domain
 - [ ] Set `NUXT_PUBLIC_API_BASE` to production backend URL
-- [ ] Verify SEO meta tags, sitemap, and `robots.txt`
+- [x] Verify SEO meta tags, sitemap, and `robots.txt`
 - [ ] Add analytics (Plausible, Umami, or Google Analytics)
 
 ## Phase 5 — Post-Launch
 
-- [ ] Add blog / articles section
+- [x] Add blog / articles section
 - [ ] Add testimonials or social proof
 - [ ] Add services page (if pursuing client work)
 - [ ] Richer project case studies with detailed write-ups

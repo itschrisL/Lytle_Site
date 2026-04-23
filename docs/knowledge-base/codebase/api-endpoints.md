@@ -10,7 +10,7 @@ tags:
 type: reference
 status: active
 created: 2026-04-22
-updated: 2026-04-22
+updated: 2026-04-23
 related:
   - "[[architecture]]"
   - "[[data-flow-maps]]"
@@ -35,6 +35,14 @@ All REST routes exposed by the FastAPI backend. Every route is prefixed `/api` v
 
 ## POST `/api/contact`
 
+### Rate Limiting
+
+| Limit | Key | Handler |
+|-------|-----|---------|
+| 5 requests / minute | Client IP (X-Forwarded-For → socket host → `"testclient"`) | Returns HTTP 429 with plain-text body; handled by `slowapi` `_rate_limit_exceeded_handler` |
+
+IP resolution is in `app/limiter.py` — `_get_client_ip` prefers `X-Forwarded-For` for proxy environments.
+
 ### Request — `ContactRequest`
 
 | Field | Type | Validation | Notes |
@@ -54,6 +62,7 @@ All REST routes exposed by the FastAPI backend. Every route is prefixed `/api` v
 | Status | Trigger |
 |--------|---------|
 | 422 Unprocessable Entity | Pydantic validation failure — bad email format or missing field |
+| 429 Too Many Requests | Rate limit exceeded — more than 5 requests/minute from the same IP |
 | 500 Internal Server Error | SMTP exception — generic user message returned, full trace logged server-side |
 
 ---
@@ -69,5 +78,5 @@ All REST routes exposed by the FastAPI backend. Every route is prefixed `/api` v
 
 ## Open TODOs
 
-- Rate limiting on `POST /api/contact` to prevent spam (Phase 3 in [[../../docs/TODO\|TODO]])
+
 - `allowed_origins` in [[../backend/utils/config\|Settings]] must include production domain before launch

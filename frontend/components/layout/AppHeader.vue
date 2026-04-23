@@ -7,6 +7,7 @@
           <NuxtLink to="/" @click="menuOpen = false">Home</NuxtLink>
           <NuxtLink to="/about" @click="menuOpen = false">About</NuxtLink>
           <NuxtLink to="/projects" @click="menuOpen = false">Projects</NuxtLink>
+          <NuxtLink to="/blog" @click="menuOpen = false">Blog</NuxtLink>
           <NuxtLink to="/resume" @click="menuOpen = false">Resume</NuxtLink>
           <NuxtLink to="/contact" class="nav-cta" @click="menuOpen = false">Contact</NuxtLink>
         </nav>

@@ -29,9 +29,13 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
 
-useHead({
+useSeoMeta({
   title: 'Contact — Chris Lytle',
-  meta: [{ name: 'description', content: 'Get in touch with Chris Lytle.' }],
+  description: 'Get in touch with Chris Lytle — open to opportunities, collaborations, and conversations.',
+  ogTitle: 'Contact — Chris Lytle',
+  ogDescription: 'Get in touch with Chris Lytle — open to opportunities, collaborations, and conversations.',
+  ogImage: '/og-image.png',
+  twitterCard: 'summary_large_image',
 })
 </script>
 

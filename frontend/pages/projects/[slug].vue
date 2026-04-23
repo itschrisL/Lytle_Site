@@ -18,11 +18,15 @@ if (!project) {
   throw createError({ statusCode: 404, statusMessage: 'Project not found' })
 }
 
-useHead({
-  title: project ? `${project.title} — Chris Lytle` : 'Not Found',
-  meta: project
-    ? [{ name: 'description', content: project.description }]
-    : [],
+useSeoMeta({
+  title: `${project.title} — Chris Lytle`,
+  description: project.description,
+  ogTitle: `${project.title} — Chris Lytle`,
+  ogDescription: project.description,
+  ogImage: project.image || '/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterTitle: `${project.title} — Chris Lytle`,
+  twitterDescription: project.description,
 })
 </script>
 
