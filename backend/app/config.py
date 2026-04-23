@@ -2,6 +2,9 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    # Set to False in production to hide /api/docs and /api/openapi.json
+    debug: bool = False
+
     # Comma-separated list of allowed origins for CORS
     allowed_origins: list[str] = ["http://localhost:3000"]
 

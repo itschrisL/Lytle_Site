@@ -19,6 +19,14 @@ Top-level catalog for the Lytle Site monorepo.
 
 ---
 
+## Deployment
+
+| Page | Description |
+|------|-------------|
+| [[deployment\|Deployment]] | Step-by-step deploy guide: Vercel/Netlify + Railway/Render, env vars, security checklist |
+
+---
+
 ## Codebase
 
 | Page | Description |
