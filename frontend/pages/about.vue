@@ -42,9 +42,13 @@
 </template>
 
 <script setup lang="ts">
-useHead({
+useSeoMeta({
   title: 'About — Chris Lytle',
-  meta: [{ name: 'description', content: 'Learn about Chris Lytle — software developer, sales engineer, and startup builder.' }],
+  description: 'Learn about Chris Lytle — software developer, sales engineer, and startup builder based in the Bay Area.',
+  ogTitle: 'About — Chris Lytle',
+  ogDescription: 'Learn about Chris Lytle — software developer, sales engineer, and startup builder based in the Bay Area.',
+  ogImage: '/og-image.png',
+  twitterCard: 'summary_large_image',
 })
 </script>
 

@@ -30,3 +30,10 @@ Thumbs.db
 
 # Build
 *.log
+
+# Obsidian — exclude machine-local state, keep shared config
+docs/knowledge-base/.obsidian/workspace.json
+docs/knowledge-base/.obsidian/workspace-mobile.json
+docs/knowledge-base/.obsidian/cache
+docs/knowledge-base/.obsidian/plugins/
+docs/knowledge-base/.trash/

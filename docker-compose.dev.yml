@@ -1,0 +1,38 @@
+# Development compose — hot reload for both frontend and backend.
+# Run via:  ./start_dev.sh
+# Or manually: docker compose -f docker-compose.dev.yml up --build
+#
+# How it works:
+#   frontend — mounts ./frontend into the container and runs `nuxt dev`
+#              Nuxt HMR recompiles on every .vue/.ts/.css save — no restart needed.
+#   backend  — mounts ./backend into the container and runs uvicorn --reload
+#              Restarts the Python process whenever any .py file changes.
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev   # lightweight image — no production build step
+    volumes:
+      - ./frontend:/app             # live-mount source so edits appear instantly
+      - /app/node_modules           # anonymous volume keeps container node_modules isolated
+    command: npm run dev
+    environment:
+      - NUXT_PUBLIC_API_BASE=http://localhost:8000
+      - HOST=0.0.0.0
+      - CHOKIDAR_USEPOLLING=true    # macOS/Windows: VM can't receive inotify events natively
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app              # live-mount so uvicorn --reload catches .py changes
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"

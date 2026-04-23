@@ -17,9 +17,13 @@
 <script setup lang="ts">
 import projects from '~/content/projects.json'
 
-useHead({
+useSeoMeta({
   title: 'Projects — Chris Lytle',
-  meta: [{ name: 'description', content: 'Browse projects by Chris Lytle — software developer, sales engineer, and startup builder.' }],
+  description: 'Browse projects by Chris Lytle — software developer, sales engineer, and startup builder.',
+  ogTitle: 'Projects — Chris Lytle',
+  ogDescription: 'Browse projects by Chris Lytle — software developer, sales engineer, and startup builder.',
+  ogImage: '/og-image.png',
+  twitterCard: 'summary_large_image',
 })
 </script>
 

@@ -1,5 +1,6 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 
+from app.limiter import limiter
 from app.schemas.contact import ContactRequest, ContactResponse
 from app.services.email import send_contact_email
 
@@ -7,7 +8,8 @@ router = APIRouter(tags=["contact"])
 
 
 @router.post("/contact", response_model=ContactResponse)
-async def submit_contact(payload: ContactRequest):
+@limiter.limit("5/minute")
+async def submit_contact(request: Request, payload: ContactRequest):
     try:
         await send_contact_email(payload)
     except Exception:

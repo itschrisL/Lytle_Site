@@ -24,10 +24,12 @@
 </template>
 
 <script setup lang="ts">
+const { social } = useAppConfig()
+
 const links = [
-  { icon: 'github', url: 'https://github.com/itschrisL', label: 'GitHub' },
-  { icon: 'linkedin', url: 'https://linkedin.com/in/', label: 'LinkedIn' },
-  { icon: 'email', url: 'mailto:chris@example.com', label: 'Email' },
+  { icon: 'github', url: social.github, label: 'GitHub' },
+  { icon: 'linkedin', url: social.linkedin, label: 'LinkedIn' },
+  { icon: 'email', url: `mailto:${social.email}`, label: 'Email' },
 ]
 </script>
 

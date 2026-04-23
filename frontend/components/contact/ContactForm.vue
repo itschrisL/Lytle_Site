@@ -83,13 +83,13 @@ const { form, loading, error, success, handleSubmit } = useContactForm()
 }
 
 .form-error {
-  color: #e74c3c;
+  color: var(--color-error);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .form-success {
-  color: #27ae60;
+  color: var(--color-success);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
