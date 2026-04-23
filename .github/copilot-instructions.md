@@ -68,6 +68,22 @@ Requires **Python 3.14** (see `backend/Dockerfile`).
 - The project is designed for static hosting of the frontend (e.g., Netlify, Vercel) and a separate deployment for the backend (e.g., Heroku, AWS). The backend API URL should be configured in the frontend's `runtimeConfig` for production.
 
 
+# Knowledge Base
+
+The project has a comprehensive knowledge base at `docs/knowledge-base/`.
+
+**Before implementing any feature or making a change:**
+
+1. Read `docs/knowledge-base/AGENTS.md` — compact project context, hard rules, and file map.
+2. Consult `docs/knowledge-base/index.md` to find the relevant KB section for the area you're modifying.
+3. Check `docs/knowledge-base/codebase/conventions.md` for naming and placement rules.
+4. For frontend work: check `docs/knowledge-base/frontend/design-tokens.md` before writing any CSS.
+5. For backend work: check `docs/knowledge-base/backend/testing.md` before writing tests.
+
+Use the code templates in `docs/knowledge-base/_templates/code-templates.md` when creating new components, composables, or API endpoints. That file contains all three templates with inline rules and context.
+
+---
+
 # Copilot Instructions
 
 ```md
@@ -86,11 +102,50 @@ Always create unit tests for new backend functionality and run existing tests to
 
 When in doubt, refer back to the project's documentation and existing codebase for guidance on how to structure your contributions. If you have questions or need clarification on any aspect of the project, don't hesitate to reach out to the maintainers or open an issue for discussion.
 
-When creating new project files, add the contents of the ascii_art/lytle_ansi_shadow.txt file as a comment at the top of the file. This serves as a fun easter egg and a reminder of the project's origins.
+When creating new project files, add the contents of the ascii_art/lytle_ansi_shadow.txt file as a comment at the top of the file. This serves as a fun easter egg and a reminder of the project's origins. Don't do this for files that are purely configuration or documentation, but for any code files (e.g., .ts, .js, .py) this can be a fun way to add some personality to the codebase while still being relevant to the project. Just make sure to keep it as a comment so it doesn't interfere with the functionality of the code.
 
 Whenever possible check if the current task is in the TODO.md file and if so, mark it as completed. If the task is not in the TODO.md file, consider whether it should be added there for better project tracking.
 
 Whenever possible for big tasks break the task down into smaller subtasks and add those subtasks to the TODO.md file. This helps with project management and ensures that all necessary steps are tracked and completed.  Then ask if I want to add these subtasks to the github project board for better visibility and tracking of progress.
 
 When creating unimportant comments in code files, try adding a funny comment referencing the code that is being commented on. This can add a bit of levity to the codebase and make it more enjoyable to work with. Just be sure that the comment is still informative and relevant to the code it is referencing.
+
+## Knowledge Base Maintenance
+
+The knowledge base lives at `docs/knowledge-base/`. It is the authoritative reference for architecture, APIs, data models, components, and decisions. Keep it accurate — stale docs are worse than no docs.
+
+### When to update the KB
+
+Update the knowledge base whenever a change affects the understanding of how the system works. Specifically:
+
+| Trigger | File(s) to update |
+|---------|------------------|
+| New API endpoint added | `codebase/api-endpoints.md` — add route row; `backend/index.md` — update dependency map if a new service/router is added |
+| Existing endpoint changed (method, path, request/response shape) | `codebase/api-endpoints.md` — update the affected row(s) |
+| New component added | `frontend/components.md` — add a row in the appropriate domain section with props, emits, composable deps |
+| Component props/emits changed | `frontend/components.md` — update the affected component entry |
+| New composable / state added | `frontend/stores.md` — document state shape and return values |
+| New backend service or utility | `backend/index.md` — add to subsystems table and dependency map; create `backend/utils/<name>.md` if the module is non-trivial |
+| Config field added or changed | `backend/utils/config.md` — update the Settings fields table |
+| Data shape in `frontend/content/*.json` changed | `codebase/database-schema.md` — update the relevant field table |
+| Auth or CORS policy changed | `codebase/authentication.md` |
+| New page or route added | `frontend/index.md` — add a row to the Routing table |
+| Significant architectural decision made | Create a new ADR in `decisions/YYYY-MM-DD-<slug>.md` using the format in `decisions/2026-04-22-initial-architecture.md` |
+| A new error or gotcha is discovered | `troubleshooting/common-errors.md` — add an entry with symptom, cause, resolution |
+| Data flow changes for an existing user action | `codebase/data-flow-maps.md` — update the affected trace |
+
+### When NOT to update the KB
+
+- Pure style or CSS-only changes that don't affect component APIs
+- Refactors that preserve public interfaces (rename internal variables, extract helpers, etc.)
+- Test-only changes
+- Dependency version bumps with no breaking API changes
+
+### Rules for KB entries
+
+- Use tables over prose wherever data is structured.
+- Every new file must include the standard YAML frontmatter (`title`, `aliases`, `tags`, `type`, `status`, `created`, `updated`, `related`).
+- Use wiki-links (`[[page]]`) for cross-references — never bare URLs to internal KB files.
+- One-line descriptions in tables: precise, not padded.
+- Update the `updated` frontmatter date on any file you modify.
 ```

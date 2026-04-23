@@ -100,3 +100,13 @@ pytest
 - **Social links**: Update `frontend/components/ui/SocialLinks.vue`
 - **Resume PDF**: Replace `frontend/public/Chris_Lytle_Resume.pdf`
 - **Colors / Design**: Modify CSS variables in `frontend/assets/css/main.css`
+
+## Knowledge Base
+
+A personal PKM / second-brain vault lives at [`docs/knowledge-base/`](docs/knowledge-base/). Open that directory as an Obsidian vault:
+
+1. Open Obsidian → **Open folder as vault** → select `docs/knowledge-base/`
+2. A minimal shared `.obsidian` config is committed, so core plugin settings and defaults apply immediately.
+
+**What's versioned:** all markdown notes and the shared `.obsidian/app.json`, `appearance.json`, and `core-plugins.json`.  
+**What's ignored:** `workspace.json`, plugin data, and `.trash/` (machine-local state excluded in `.gitignore`).
